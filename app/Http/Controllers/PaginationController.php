@@ -12,11 +12,17 @@ class PaginationController extends Controller
         $data = User::paginate(8);
         return view('pagination', compact('data'));
     }
+
     function fetch_data(Request $request)
     {
         if ($request->ajax()) {
             $data = User::paginate(8);
             return view('pagination_data', compact('data'))->render();
         }
+    }
+    public function tab_filter()
+    {
+        $data = User::get();
+        return view('tabfilter', compact('data'));
     }
 }

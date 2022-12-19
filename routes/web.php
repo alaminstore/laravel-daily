@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get('/pagination', [PaginationController::class, 'index']);
 Route::get('/pagination/fetch_data', [PaginationController::class, 'fetch_data']);
+// tab filtering for small size of data
+Route::get('/tab-filter', [PaginationController::class, 'tab_filter']);
