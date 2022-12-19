@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaginationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pagination', [PaginationController::class, 'index']);
+Route::get('/pagination/fetch_data', [PaginationController::class, 'fetch_data']);
